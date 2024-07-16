@@ -1,0 +1,17 @@
+<body>
+    <script>
+        // fetch의 return 값 = Promise
+        // Promise를 return 하는 것들은 non-blocking으로 동작
+        const res = fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+        console.log(res);
+        res.then((res) => {
+            console.log(res);
+            const res2 = fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            res2.then((res2) => {
+                const res3 = fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            })
+        })
+        console.log(res); // then 보다 먼저 동작
+        console.log('end');
+    </script>
+</body>

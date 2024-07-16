@@ -1,0 +1,33 @@
+<!-- <body>
+    <script>
+        async function run() {
+            console.log('start');
+            const res = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            console.log(res);
+            const res2 = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            const res3 = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            console.log('end');
+        }
+        run();
+        console.log('end2'); // 먼저 동작
+    </script>
+</body> -->
+
+<!-- run 먼저 동작하고 end2 동작 -->
+<body>
+    <script>
+        async function run() {
+            console.log('start');
+            const res = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            console.log(res);
+            const res2 = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            const res3 = await fetch('https://api.themoviedb.org/3/search/movie?api_key=cba95d401a14ab806ffc13a5052aab89&query=부산');
+            console.log('end');
+        }
+        async function action() {
+            await run();
+            console.log('end2');
+        }
+        action();
+    </script>
+</body>
